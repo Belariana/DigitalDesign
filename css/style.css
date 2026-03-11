@@ -13,7 +13,7 @@ body {
 h1 {
     font-weight: 400;
 }
-
+ 
 /* =========================================
    ГЛАВНАЯ: ОСНОВНОЙ БЛОК
    ========================================= */
@@ -525,14 +525,18 @@ h1 {
 
         .as-photo-wrap {
             width: 100%;
-            height: auto; 
+            height: 100%; 
             border-radius: 16px;
+            overflow: hidden; 
         }
 
-        .as-img {
+
+        .as-photo-wrap img {
             width: 100%;
-            height: auto; 
-            object-fit: contain; 
+            height: 100%;
+            object-fit: cover; 
+            object-position: center center; 
+            display: block;
         }
 
         .as-info-wrap {
