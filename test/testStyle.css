@@ -1,0 +1,161 @@
+/* Глобальные стили и переменные */
+:root {
+    --bg-page: #FFFDF9;
+    --bg-element: #F7F5EF;
+    --text-color: #171922;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-page);
+    font-family: var(--font-main);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Основной контейнер-обертка */
+.portfolio-wrapper {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+/* Стили для блока анимации (теперь это lottie-player) */
+.animation-box {
+    width: 280px;
+    height: 280px;
+    background-color: var(--bg-element);
+    border-radius: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.animation-box:hover {
+    transform: scale(1.05);
+}
+
+/* Блок с кликабельными кнопками */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    background-color: var(--bg-element);
+    padding: 14px 28px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: transform 0.2s ease; /* Убрали box-shadow из transition */
+}
+
+/* ИЗМЕНЕНО: Убрана тень, оставлено только приближение */
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Контейнер для текстовых блоков */
+.info-container {
+    width: 100%;
+    max-width: 715px; 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-section h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.info-section ol {
+    padding-left: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.info-section li::marker {
+    font-weight: 400; /* normal */
+}
+
+.time {
+    font-weight: 600; 
+}
+
+.info-section li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: var(--bg-element);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .info-container {
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .info-section {
+         align-items: center;
+    }
+
+    .info-section ol {
+        text-align: left;
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .links {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .btn {
+        width: 90%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .tags {
+        justify-content: center;
+    }
+}
